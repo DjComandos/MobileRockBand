@@ -2,11 +2,27 @@ doctype 5
 html(lang="en")
   head
     title hack'13
+
     link(href="/css/bootstrap.min.css", rel="stylesheet")
+    link(href="/css/default.css", rel="stylesheet")
+
     script(src="/socket.io/socket.io.js")
     script(src="/scripts/jquery-1.8.2.min.js")
+    script(src="/scripts/jquery.equalizer.js")
     script(src="/scripts/socket.client.js")
 
     body
-      div.container
+      header
         h1 Mobile-RockBand
+
+      div.container
+        .row-fluid
+          .span4
+            .equalizer.pi
+          .span4
+            .equalizer.gu
+          .span4
+            .equalizer.dr
+
+      footer
+

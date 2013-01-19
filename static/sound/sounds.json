@@ -9,6 +9,6 @@
   },
   {"type":"drums",
    "path":"drums",
-   "tones":["crash","end-crash","snare-hit"]
+   "tones":["crash","end-crash","snare-hit","kick","high-hat"]
   }
 ]

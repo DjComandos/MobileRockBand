@@ -21,11 +21,8 @@ app.configure(function(){
 
 
 app.get('/', routes.index);
-<<<<<<< HEAD
 app.get('/piano.html', routes.piano);
-=======
 app.get('/listen', routes.listen);
->>>>>>> e4c5454817c80cf1ce6777bdebaaf2a6a7071e84
 
 server.listen(app.get('port'), function(){
     console.log("Express server listening on port " + app.get('port'));

@@ -1,0 +1,8 @@
+.piano .button {
+	background: white;
+	border: 1px solid black;
+	width: 137px;
+	height: 640px;
+	float: left;
+	margin: 2px;
+}

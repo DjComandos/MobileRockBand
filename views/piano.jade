@@ -4,22 +4,15 @@ html
 	title
 		piano
 	link(rel='stylesheet', type='text/css', href='styles/main.css')
-	script(src='scripts/jquery-1.8.2.min.js')
-	script(src='scripts/jquery.mobile.min.js')
+	
+	script(src='/scripts/jquery-1.8.2.min.js')
+	script(src='/scripts/jquery.mobile.min.js')
 	meta(name='viewport', content='width=device-width,user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0')
-	script
-		$(function(){
+	script(src="/socket.io/socket.io.js")
+	script(src='/scripts/instruments.js')
 
-			$('.button')
-			.bind('mousedown touchstart', function(){
-				$(this).addClass('active');
-			})
-			.bind('mouseup touchend', function(){
-				$(this).removeClass('active');
-			});
-		});
 
-body.piano
+body.piano(data-instrument='p')
 	//
 		.top-line		
 			.first-octave
@@ -37,5 +30,3 @@ body.piano
 		.button#E
 		.button#F
 		.button#G
-
-	

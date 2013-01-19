@@ -2,5 +2,9 @@
   {"type":"piano",
    "path":"piano",
    "tones":["a","b","c","d","e","f","g"]
+  },
+  {"type":"guitar",
+   "path":"guitar",
+   "tones":["E1","A1","D1","G2","B2","E2"]
   }
 ]

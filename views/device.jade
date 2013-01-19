@@ -2,20 +2,21 @@ doctype 5
 html(lang="en")
 	head
 		title hack'13
+		meta(name="viewport",content="width=device-width, initial-scale=1.2")
+		link(type="text/css",rel="stylesheet",href="css/bootstrap.min.css")
+		
 	body
 	
-		div
+		div(style="text-align:center;")
 			h1 Choose your Instrument
-			ul(class="instrument_selector row")
-				div(class="span5")
-				li(class="drum span2",onclick="selectInstrument('drum')")
+			div(class="instrument_selector row")
+				li(class="drum span2 offset6",onclick="selectInstrument('drum')")
 				li(class="guitar span2",onclick="selectInstrument('guitar')")
 				li(class="piano span2",onclick="selectInstrument('piano')")
-				div(class="span5")
-
+				
 		style
 			.instrument_selector {}
-			.instrument_selector li {display:block; width:102px; height:101px; float:left;}
+			.instrument_selector li {width:102px; height:101px; display:block; float:left;}
 			.instrument_selector li.drum {background: url('img/instruments.jpg') -109px 0;}
 			.instrument_selector li.guitar {background: url('img/instruments.jpg') 0 0;}
 			.instrument_selector li.piano {background: url('img/instruments.jpg') -438px 0;}

@@ -8,12 +8,6 @@
             alert('echo');
         });
 
-        var instruments = io.connect('/instruments');
-
-        instruments.emit('play',{'id':'hello'});
-
     });
-
-
 
 })();

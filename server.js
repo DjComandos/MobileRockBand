@@ -35,7 +35,6 @@ var sounds = io.of('/sounds').on('connection', function (socket) {
 var sender = io.of('/instruments').on('connection', function (socket) {
 
     socket.on('play',function(data){
-
         sounds.emit('play', data);
     });
 });

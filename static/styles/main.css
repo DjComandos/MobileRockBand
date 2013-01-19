@@ -21,7 +21,7 @@ body {
 	cursor: pointer;
 }
 .piano .button:active,
-.piano .button:hover {
+.piano .button.mobile-active {
 	background: grey;
 }
 .piano .top-line .button {

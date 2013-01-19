@@ -20,6 +20,7 @@ app.configure(function(){
 
 
 app.get('/', routes.index);
+app.get('/piano.html', routes.piano);
 
 server.listen(app.get('port'), function(){
     console.log("Express server listening on port " + app.get('port'));

@@ -10,23 +10,16 @@ html
 	script(src='/scripts/jquery-1.8.2.min.js')
 	script(src='/scripts/jquery.mobile.min.js')
 	script(src='/scripts/instruments.js')
+	script(type='text/javascript')
+		$(document).ready(function (){
+			$('.button').height((+$(window).height()-1) / 6);
+		});
 
 
-body.piano(data-instrument='pi')	
-	//
-		.top-line		
-			.first-octave
-				.button
-				.button
-			.second-octave
-				.button
-				.button
-				.button
-	.bottom-line
-		.button#a
-		.button#b
-		.button#c
-		.button#d
-		.button#e
-		.button#f
-		.button#g
+body.guitar(data-instrument='gu')	
+	.button#E1
+	.button#A1
+	.button#D1
+	.button#G2
+	.button#B2
+	.button#E2

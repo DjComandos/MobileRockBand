@@ -36,6 +36,8 @@
             var i
                 , current_time = (new Date()).getTime();
 
+            $( '.' + type ).equalizer('up');
+
             for (i = 0; i < mrb.CHANNEL_MAX; i++) {
                 var channel = mrb.channels[i];
                 if (channel.finished < current_time) {
@@ -52,11 +54,12 @@
         socket = io.connect('/sounds');
 
         socket.on('play', function(data){
+
             mrb.playSound(data.i, data.t);
         });
 
         $.getJSON("/sound/sounds.json", function(data){
-            var conrainer = $('body');
+            var conrainer = $('footer');
             data.forEach(function(instrument){
                 var type = instrument.type.substring(0,2)
                     , path = instrument.path;
@@ -67,6 +70,7 @@
             });
         });
 
+        $('.equalizer').equalizer({ seed: 600 });
     });
 
 })();

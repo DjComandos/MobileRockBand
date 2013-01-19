@@ -1,8 +1,18 @@
+
+header h1 {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 2em 0 0;
+}
+
 .equalizer {
     display: block;
-    width: 4em;
+    width: 30%;
     float: left;
-    margin-right: 0.5em;
+    margin: 0.5em 35%;
 }
 
 .equalizer span {

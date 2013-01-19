@@ -8,9 +8,9 @@ html(lang="en")
 			h1 Choose your Instrument
 			ul(class="instrument_selector row")
 				div(class="span5")
-				li(class="drum span2")
-				li(class="guitar span2")
-				li(class="piano span2")
+				li(class="drum span2",onclick="selectInstrument('drum')")
+				li(class="guitar span2",onclick="selectInstrument('guitar')")
+				li(class="piano span2",onclick="selectInstrument('piano')")
 				div(class="span5")
 
 		style
@@ -19,3 +19,8 @@ html(lang="en")
 			.instrument_selector li.drum {background: url('img/instruments.jpg') -109px 0;}
 			.instrument_selector li.guitar {background: url('img/instruments.jpg') 0 0;}
 			.instrument_selector li.piano {background: url('img/instruments.jpg') -438px 0;}
+
+		script
+			function selectInstrument(type) {
+				alert(type);
+			}

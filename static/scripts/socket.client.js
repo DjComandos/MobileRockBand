@@ -36,7 +36,7 @@
             var i
                 , current_time = (new Date()).getTime();
 
-            $( '.' + type ).equalizer('up');
+            $( '.equalizer.' + type ).equalizer('up');
 
             for (i = 0; i < mrb.CHANNEL_MAX; i++) {
                 var channel = mrb.channels[i];

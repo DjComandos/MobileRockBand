@@ -1,6 +1,6 @@
 
 exports.index = function(req, res){
-    res.render('index');
+    res.render('device');
 };
 
 exports.piano = function(req, res){

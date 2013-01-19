@@ -10,3 +10,7 @@ exports.piano = function(req, res){
 exports.listen = function(req, res){
     res.render('client');
 };
+
+exports.guitar = function(req, res){
+    res.render('guitar');
+};

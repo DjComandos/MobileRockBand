@@ -64,11 +64,25 @@ body,
 	bottom: 3px;
 }
 
-.piano .button:active,
-.piano .button.mobile-active {
+.piano .button.active {
 	background: grey;
 }
 .piano .top-line .button {
 	background: black;
 	border: 1px solid black;
+}
+
+/* ===================== guitar =====================*/
+.guitar {
+	width: 100%;
+}
+.guitar .button {
+	height: 13%;
+	width: 100%;
+	border: 1px solid black;
+	display: block;
+	cursor: pointer;
+}
+.guitar .button.active {
+	background: grey;
 }

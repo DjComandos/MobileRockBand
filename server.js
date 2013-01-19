@@ -22,6 +22,7 @@ app.configure(function(){
 
 app.get('/', routes.index);
 app.get('/piano', routes.piano);
+app.get('/guitar', routes.guitar);
 app.get('/listen', routes.listen);
 
 server.listen(app.get('port'), function(){

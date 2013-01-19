@@ -1,0 +1,20 @@
+extends layout
+
+block content
+    p Welcome
+	
+style
+	.instrument_selector {}
+	.instrument_selector li {display:block; width:102px; height:101px; float:left;}
+	.instrument_selector li.drum {background: url('RB3-ICONS.jpg') -109px 0;}
+	.instrument_selector li.guitar {background: url('RB3-ICONS.jpg') 0 0;}
+	.instrument_selector li.piano {background: url('RB3-ICONS.jpg') -438px 0;}
+
+div
+	h1 Choose your Instrument
+	ul(class="instrument_selector row")
+		div(class="span5")
+		li(class="drum span2")
+		li(class="guitar  span2")
+		li(class="piano  span2")
+		div(class="span5")

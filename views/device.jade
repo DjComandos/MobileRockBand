@@ -2,24 +2,27 @@ doctype 5
 html(lang="en")
 	head
 		title hack'13
-		meta(name="viewport",content="width=device-width, initial-scale=1.2")
+		meta(name="viewport",content="width=device-width, initial-scale=1")
 		link(type="text/css",rel="stylesheet",href="css/bootstrap.min.css")
 		
 	body
-	
 		div(style="text-align:center;")
 			h1 Choose your Instrument
-			div(class="instrument_selector row")
-				li(class="drum span2 offset6",onclick="selectInstrument('drum')")
-				li(class="guitar span2",onclick="selectInstrument('guitar')")
-				li(class="piano span2",onclick="selectInstrument('piano')")
+			table(style="width:100%",class="instrument_selector")
+				tr
+					td(style="text-align:right")
+						i(class="drum",onclick="selectInstrument('drum')")
+					td(style="text-align:center; width:120px;")
+						i(class="guitar",onclick="selectInstrument('guitar')")
+					td(style="text-align:left")
+						i(class="piano",onclick="selectInstrument('piano')")
 				
 		style
 			.instrument_selector {}
-			.instrument_selector li {width:102px; height:101px; display:block; float:left;}
-			.instrument_selector li.drum {background: url('img/instruments.jpg') -109px 0;}
-			.instrument_selector li.guitar {background: url('img/instruments.jpg') 0 0;}
-			.instrument_selector li.piano {background: url('img/instruments.jpg') -438px 0;}
+			.instrument_selector i {width:102px; height:101px;background-image:url('img/instruments.jpg');background-repeat: no-repeat;display: inline-block;line-height:101px;}
+			.instrument_selector i.drum {background-position:-109px 0;}
+			.instrument_selector i.guitar {background-position:0 0;}
+			.instrument_selector i.piano {background-position:-438px 0;}
 
 		script
 			function selectInstrument(type) {

@@ -4,7 +4,8 @@ var express = require('express'),
     path = require('path'),
     app = express(),
     server = require('http').createServer(app),
-    io = require('socket.io').listen(server);
+    io = require('socket.io').listen(server),
+    members = {};
 
 app.configure(function(){
     app.set('port', process.env.PORT || 8080);
@@ -20,7 +21,16 @@ app.configure(function(){
 
 
 app.get('/', routes.index);
+app.get('/listen', routes.listen);
 
 server.listen(app.get('port'), function(){
     console.log("Express server listening on port " + app.get('port'));
+});
+
+
+io.sockets.on('connection', function (socket) {
+
+    socket.on('play',function(data){
+        io.of('/listens').emit('play', data);
+    });
 });

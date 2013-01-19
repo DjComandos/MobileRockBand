@@ -6,5 +6,9 @@
   {"type":"guitar",
    "path":"guitar",
    "tones":["E1","A1","D1","G2","B2","E2"]
+  },
+  {"type":"drums",
+   "path":"drums",
+   "tones":["crash","end-crash","snare-hit"]
   }
 ]

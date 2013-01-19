@@ -7,6 +7,9 @@ body {
 	height: 960px;
 	display: block;
 }
+.button {
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
 .piano .bottom-line {
 	display: block;
 }

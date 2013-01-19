@@ -6,7 +6,7 @@
 
     window.addEventListener('load', function (document) {
         var i
-          , soundsSoc;
+          , socket;
 
         /*
           Append sounds to page for preloading
@@ -14,7 +14,7 @@
         $.getJSON("/sound/sounds.json", function(data){
             var body = $('body');
             data.forEach(function(instrument){
-                var type = instrument.type
+                var type = instrument.type.substring(0,2)
                   , path = instrument.path;
                 instrument.tones.forEach(function(tone){
                     body.append('<audio id="sound-' + type + '-' + tone + '" src="sound/' + path + '/' + tone + '.mp3" preload="auto"></audio>');
@@ -49,16 +49,16 @@
             }
         }
 
-        soundsSoc = io.connect('/sounds');
+        socket = io.connect('/sounds');
 
-        soundsSoc.on('play',function(data){
-
+        socket.on('play', function(data){
+            mrb.playSound(data.i, data.t);
         });
 
         $.getJSON("/sound/sounds.json", function(data){
             var conrainer = $('body');
             data.forEach(function(instrument){
-                var type = instrument.type
+                var type = instrument.type.substring(0,2)
                     , path = instrument.path;
                 instrument.tones.forEach(function(tone){
                     conrainer.append('<button onclick="mrb.playSound(\''+type+'\', \''+ tone +'\')">'+type+' : '+tone+'</button>');

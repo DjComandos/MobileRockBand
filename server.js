@@ -21,17 +21,21 @@ app.configure(function(){
 
 
 app.get('/', routes.index);
-app.get('/piano.html', routes.piano);
+app.get('/piano', routes.piano);
 app.get('/listen', routes.listen);
 
 server.listen(app.get('port'), function(){
     console.log("Express server listening on port " + app.get('port'));
 });
 
+var sounds = io.of('/sounds').on('connection', function (socket) {
 
-io.sockets.on('connection', function (socket) {
+});
+
+var sender = io.of('/instruments').on('connection', function (socket) {
 
     socket.on('play',function(data){
-        io.of('/listens').emit('play', data);
+
+        sounds.emit('play', data);
     });
 });

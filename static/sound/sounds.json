@@ -1,7 +1,8 @@
 [
   {"type":"piano",
    "path":"piano",
-   "tones":["a","b","c","d","e","f","g"]
+   "tones":["25c","26Cd","27D","28Dd","29E","20F","31Fd","32G","33Gd","34A","35Ad","36B","37C","38Cd","39D","40Dd"]
+   
   },
   {"type":"guitar",
    "path":"guitar",

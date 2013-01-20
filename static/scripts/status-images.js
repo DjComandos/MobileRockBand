@@ -3,12 +3,12 @@ var statusImages = (function(){
 
 	// the dead code
 	function onTick(type, $element, max){
-		$element.child[].attr('class', timersHandlers[type].count % )
+		$element.child()[0].attr('class', timersHandlers[type].count % max)
 		
 
 		if(--timersHandlers[type].count > 0) {
 			setTimeout(function (){
-				onTick(type, element);
+				onTick(type, element, max);
 			}, 250);	
 		}
 

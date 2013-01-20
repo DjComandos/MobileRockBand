@@ -37,6 +37,7 @@
                 , current_time = (new Date()).getTime();
 
             $( '.equalizer.' + type ).equalizer('up');
+            $('.timeline.' + type ).timeline('add');
 
             for (i = 0; i < mrb.CHANNEL_MAX; i++) {
                 var channel = mrb.channels[i];
@@ -59,18 +60,25 @@
         });
 
         $.getJSON("/sound/sounds.json", function(data){
-            var conrainer = $('footer');
+            var conrainer = $('.debug');
             data.forEach(function(instrument){
                 var type = instrument.type.substring(0,2)
                     , path = instrument.path;
+
+                var group = $('<div>').addClass('btn-group');
                 instrument.tones.forEach(function(tone){
-                    conrainer.append('<button onclick="mrb.playSound(\''+type+'\', \''+ tone +'\')">'+type+' : '+tone+'</button>');
+                    group.append('<button class="btn" onclick="mrb.playSound(\''+type+'\', \''+ tone +'\')">'+tone+'</button>');
                 });
-                conrainer.append('<br />');
+                conrainer.append(group).append('<br><br>');
             });
         });
 
-        $('.equalizer').equalizer({ seed: 600 });
+        $('.equalizer.pi').equalizer({ seed: 700 });
+        $('.equalizer.gu').equalizer({ seed: 800 });
+        $('.equalizer.dr').equalizer({ seed: 600 });
+
+        $('.timeline,.timestory').timeline();
+        $('.timestory').timeline('story');
     });
 
 })();

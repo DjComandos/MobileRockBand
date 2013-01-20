@@ -83,31 +83,34 @@ body.piano {
 	border: 0px solid red;
 	display: block;
 	cursor: pointer;
-	background: url('/images/guitar-string.png') no-repeat center center;
 	background-position: 0px -4px;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
 }
-.guitar .button.p0 {
-	background-position: 0px 21px;
+.guitar .button .string {
+	height: 20px;
+	border-bottom: 5px solid grey;
 }
-.guitar .button.p1 {
-	background-position: 0px -33px;
+.guitar .button.p0 .string {
+	height: 20px;
 }
-.guitar .button.p2 {
-	background-position: 0px -83px;
+.guitar .button.p1 .string {
+	height: 21px;
 }
-.guitar .button.p3 {
-	background-position: 0px -150px;
+.guitar .button.p2 .string {
+	height: 22px;	
 }
-.guitar .button.p4 {
-	background-position: 0px -208px;
+.guitar .button.p3 .string {
+	height: 19px;
+}
+.guitar .button.p4 .string {
+	height: 18px;
 }
 .guitar .button.active {
-	background: grey;
-}
+	/*background: grey;*/
+};
 
 body.drum {
     background: url("../img/drum_bg_.png") no-repeat;

@@ -36,19 +36,19 @@ $(document).ready(function(){
         };
 
         $('.button')
-            .bind('mousedown touchstart', function(){
+            .bind('touchstart', function(){
                 play($(this));
             })
             .bind('mouseup touchend', function(){
                 isMouseDown = true;
                 $(this).removeClass('active');
-            })
-            .bind('vmouseover', function(){
+            });
+            /*.bind('vmouseover', function(){
                 if(isMouseDown) {
                     $(this).addClass('active');
                     play($(this));
                 }
-            });
+            });/**/
 
     });
 

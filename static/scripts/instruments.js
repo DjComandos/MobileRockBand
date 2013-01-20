@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    $('.ui-loader').hide()
+
     window.addEventListener('load', function (document) {
 
         var server = io.connect('/instruments');
@@ -38,10 +40,10 @@ $(document).ready(function(){
         };
 
         $('.button')
-            .bind('touchstart', function(){
+            .bind('vmousedown', function(){
                 play($(this));
             })
-            .bind('mouseup touchend', function(){
+            .bind('vmouseup', function(){
 
                 if ( instrument === 'pi') {
                     server.emit('stop', { 'i': instrument, 't': $(this).attr('id') } );

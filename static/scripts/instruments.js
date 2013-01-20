@@ -9,6 +9,8 @@ $(document).ready(function(){
         var isMouseDown = false;
         var strings = {};
 
+        $(document).bind('touchmove', false);
+
         function timerStep(id, $element){
             $element.removeClass('p0').removeClass('p1').removeClass('p2').removeClass('p3').removeClass('p4');
             $element.addClass('p' + +strings[id].step % 5);

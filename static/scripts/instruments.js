@@ -40,6 +40,7 @@ $(document).ready(function(){
         };
 
         $('.button')
+
             .bind('vmousedown', function(){
                 play($(this));
             })

@@ -128,3 +128,30 @@ footer {
     margin: 0px 10px;
     display: none;
 }
+
+/* ================= recorder =================== */
+.recorder {
+    margin: 50px auto;
+    border: 0px solid black;
+    width: 100px;
+    height: 100px;
+    background: red;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.recorder.recording,
+.recorder.playing {
+    background: black;
+    border-radius: 0%;
+}
+
+.recorder.recorded {
+    width: 0px;
+    height: 0px;
+    background: transparent;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid black;
+    border-radius: 0%;
+}

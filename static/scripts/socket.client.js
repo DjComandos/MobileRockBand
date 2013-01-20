@@ -1,4 +1,9 @@
 (function() {
+    window.recorded = [];
+    window.start_time = undefined;
+    window.isRecording = false;
+    window.index = 0;
+
     window.mrb = window.mrb || {
         channels: [],
         CHANNEL_MAX: 20
@@ -32,9 +37,36 @@
             };
         }
 
+        function playNextSavedSound(){
+            if(!!recorded && recorded.length > index) {
+                try {
+                    var current = recorded[index++];
+                    setTimeout(function(){
+                        window.mrb.playSound(current.type, current.tone);
+                        playNextSavedSound();   
+                    }, current.delay);
+                } catch(e) {
+                    recorded = [];
+                    index = 0;
+                }
+            }
+        }
+
+        window.mrb.playRecordedSound = window.mrb.playRecordedSound || function (){
+            index = 0;
+            playNextSavedSound();
+        };
+
         window.mrb.playSound = window.mrb.playSound || function (type, tone) {
-            var i
-                , current_time = (new Date()).getTime();
+            var i,
+                current_time = (new Date()).getTime();
+
+            if(window.isRecording){
+                start_time = start_time || (new Date()).getTime();
+                recorded.push({'type':type, 'tone': tone, 'delay': current_time - start_time});
+                start_time = current_time;
+            }
+            
 
             $( '.equalizer.' + type ).equalizer('up');
             $('.timeline.' + type ).timeline('add');

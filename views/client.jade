@@ -12,6 +12,13 @@ html(lang="en")
     script(src="/scripts/jquery.timeline.js")
     script(src="/scripts/status-images.js")
     script(src="/scripts/socket.client.js")
+    script(src="/scripts/jquery.recorder.js")
+    script(type="text/javascript")
+      $(function (){
+        $('.recorder').recorder();
+      });
+      
+    
 
     body
       .body
@@ -29,6 +36,8 @@ html(lang="en")
           .equalizer.pi
           .equalizer.gu
           .equalizer.dr
+
+        .recorder
 
         .debug
 

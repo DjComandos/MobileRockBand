@@ -10,66 +10,54 @@ body {
 	width: 1280px;
 	
 }
+
+/* piano */
 body.piano {
-	height: 640px; 
-	width: 960px;
+ background:url('../img/piano.png') repeat-x #000;
+ padding-left:3px;
+ background-size: 100% auto; 
 }
 .button {
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
-
-/* piano */
-
-
-.piano .button {
-	background: white;
-	border: 1px solid black;
-	width: 13%;
+.piano  .button {
+	width: 7%;
+	vertical-align:bottom;
 	float: left;
 	display: block;
-	height: 640px; 
-	margin: 2px;
+	height:100%;
 	cursor: pointer;
-}
-
-/* piano top */
-.piano .top-line {
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	z-index: 10;
-	bottom: 0px;
-	height: 50%;
-}
-.piano .top-line .first-octave,
-.piano .top-line .second-octave {
-	float: left;
-	width: 40%;
-}
-.piano .top-line .second-octave {
-	width: 60%;
+	
 }
 
 .piano .top-line .button {
-	background: black;
-	margin-left: 6%;
+	margin-right:1%;
+	width:5%;
+	height:150px;
 }
+
+
+/* piano top */
+.piano .top-line {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 10;
+	display: block;
+	width:100%;
+}
+
 /* piano bottom */
 .piano .bottom-line {
 	display: block;
 	width: 100%;
 	position: absolute;
-	z-index: 1px;
-	top: 0px;
+	top: 9px;
 	bottom: 3px;
 }
 
 .piano .button.active {
-	background: grey;
-}
-.piano .top-line .button {
-	background: black;
-	border: 1px solid black;
+	background: rgba(0,0,0,0.6);
 }
 
 /* ===================== guitar =====================*/
@@ -108,9 +96,6 @@ body.piano {
 .guitar .button.p4 .string {
 	height: 18px;
 }
-.guitar .button.active {
-	/*background: grey;*/
-};
 
 body.drum {
     background: url("../img/drum_bg_.png") no-repeat;

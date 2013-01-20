@@ -40,6 +40,14 @@ $(document).ready(function(){
                 }, 20);/**/
             }
         };
+		
+		function isTouchDevice(){
+		  return (typeof(window.ontouchstart) != 'undefined') ? true : false;
+		}
+		var startEvent = isTouchDevice() ? 'touchstart' : 'mousedown';
+		var endEvent = isTouchDevice() ? 'touchend' : 'mouseup';
+			
+            
 
         $('.button')
 

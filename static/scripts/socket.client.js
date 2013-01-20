@@ -84,7 +84,7 @@
         });
 
         $.getJSON("/sound/sounds.json", function(data){
-            var conrainer = $('.debug');
+            var conrainer = $('.debug').hide();
             data.forEach(function(instrument){
                 var type = instrument.type.substring(0,2)
                     , path = instrument.path;

@@ -3,31 +3,41 @@ html
 	head
 	title piano
 
-	meta(name='viewport', content='width=device-width,user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0')
+	meta(name='viewport', content='width=device-width,user-scalable=no, initial-scale=1.2, maximum-scale=1, user-scalable=0')
 	link(rel='stylesheet', type='text/css', href='/css/instruments.css')
 
 	script(src="/socket.io/socket.io.js")
 	script(src='/scripts/jquery-1.8.2.min.js')
+	script(src='/scripts/jquery.mobile.min.js')
 	script(src='/scripts/instruments.js')
 
 
 body.piano(data-instrument='pi')	
 	//
-		.top-line		
-			.first-octave
-				.button
-				.button
-			.second-octave
-				.button
-				.button
-				.button
+	.top-line
+		.button(style="margin-left:5%;")#26Cd
+		.button(style="margin-left:2%;")#28Dd
+		.button(style="margin-left:6%;")#31Fd
+		.button(style="margin-left:2%;")#33Gd
+		.button(style="margin-left:2%;")#35Ad
+		.button(style="margin-left:8%;")#38Cd
+		.button(style="margin-left:2%;")#40Dd
+		.button(style="margin-left:7%;")#43Fd
+		.button(style="margin-left:2%;")#45Gd
+		.button(style="margin-left:2%;")#47Ad
 	.bottom-line
-		.button#25c 25C
-		.button#26Cd 26Cd
-		.button#27D 27D
-		.button#28Dd
+		.button#25c
+		.button#27D
 		.button#29E
 		.button#30F
-		.button#31Fd
+		.button#32G
+		.button#34A(style="margin-left:2%;")
+		.button#36B
+		.button#37C
+		.button#39D
+		.button#41E
+		.button#42F
+		.button#44G
+		.button#46A
+		.button#48B
 		
-	

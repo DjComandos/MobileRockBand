@@ -3,10 +3,11 @@ var statusImages = (function(){
 
 	function start(type){
 		console.log(type);
+
 	}
 
 	function stop(type){
-		console.log(type);
+		console.log('stop'+type);
 	}
 
 	return {

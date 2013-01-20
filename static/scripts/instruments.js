@@ -26,7 +26,7 @@ $(document).ready(function(){
         };
 
         $('.button')
-            .bind('mousedown touchstart', function(){
+            .bind('touchstart', function(){
                 play($(this));
             })
             .bind('mouseup touchend', function(){

@@ -8,7 +8,15 @@ $(document).ready(function(){
         var strings = {};
 
         function timerStep(id, $element){
-            console.log('111');
+            $element.removeClass('p0').removeClass('p1').removeClass('p2')
+            $element.addClass('p' + +strings[id].step % 3);
+
+            if(--strings[id].step > 0) {
+
+                setTimeout(function(){
+                    timerStep(id, $element);
+                }, 100);
+            }
         };
 
         function play($element) {
@@ -17,16 +25,18 @@ $(document).ready(function(){
             server.emit('play', { 'i': instrument, 't': id } );
 
             $element.addClass('active');
-          //  strings[id] = strings[id] || {};
-          //  strings[id].step = 1;
-/*
-            setTimeOut(function(){
-                timerStep(id, $element);
-            }, 250);/**/
+            if(instrument == 'gu') {
+                strings[id] = strings[id] || {};
+                strings[id].step = 10;
+
+                setTimeout(function(){
+                    timerStep(id, $element);
+                }, 250);/**/
+            }
         };
 
         $('.button')
-            .bind('touchstart', function(){
+            .bind('mousedown touchstart', function(){
                 play($(this));
             })
             .bind('mouseup touchend', function(){

@@ -112,18 +112,83 @@ body.piano {
 body.drum {
     background: url("../img/drum_bg_.png") no-repeat;
     background-size: 1024px;
+    width: 1024px;
+    overflow: hidden;
 }
 
 body.drum .instrument {
     position: absolute;
-    background-color: #ffffff;
-    opacity: 0.5;
+    background-color: #cccccc;
+    opacity: 0;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    padding: 0;
+    margin: 0;
 }
-body.drum div#kick {
+
+#contttt{
+    width: 1024px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body.drum div#crash {
     top: -16px;
     left: 35px;
     width: 315px;
     height: 315px;
     border-radius: 157px;
+}
+body.drum div#end-crash {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 344px;
+    height: 344px;
+    border-radius: 172px;
+}
+
+body.drum div#end-crash-wrapper {
+    position: absolute;
+    top: 162px;
+    left: 713px;
+    width: 310px;
+    height: 344px;
+    overflow: hidden;
+}
+
+body.drum div#kick {
+    top: 330px;
+    left: 330px;
+    width: 365px;
+    height: 150px;
+}
+
+
+
+
+body.drum div#high-hat {
+    top: 410px;
+    left: -23px;
+    width: 232px;
+    height: 232px;
+    border-radius: 116px;
+}
+
+body.drum div#snare-hit-wrapper {
+    position: absolute;
+    top: 490px;
+    left: 140px;
+    width: 232px;
+    height: 180px;
+    overflow: hidden;
+}
+
+body.drum div#snare-hit {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 232px;
+    height: 232px;
+    border-radius: 116px;
 }

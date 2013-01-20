@@ -1,11 +1,12 @@
 $(document).ready(function(){
-
     window.addEventListener('load', function (document) {
 
         var server = io.connect('/instruments');
         var instrument = $('body').attr('data-instrument');
         var isMouseDown = false;
         var strings = {};
+
+        $(document).bind('touchmove', false);
 
         function timerStep(id, $element){
             $element.removeClass('p0').removeClass('p1').removeClass('p2')

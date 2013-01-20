@@ -36,12 +36,20 @@ $(document).ready(function(){
                 }, 20);/**/
             }
         };
+		
+		function isTouchDevice(){
+		  return (typeof(window.ontouchstart) != 'undefined') ? true : false;
+		}
+		var startEvent = isTouchDevice() ? 'touchstart' : 'mousedown';
+		var endEvent = isTouchDevice() ? 'touchend' : 'mouseup';
+			
+            
 
         $('.button')
-            .bind('mousedown touchstart', function(){
+			.bind(startEvent, function(){
                 play($(this));
             })
-            .bind('mouseup touchend', function(){
+            .bind(endEvent, function(){
 
                 if ( instrument === 'pi') {
                     server.emit('stop', { 'i': instrument, 't': $(this).attr('id') } );

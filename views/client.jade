@@ -10,6 +10,7 @@ html(lang="en")
     script(src="/scripts/jquery-1.8.2.min.js")
     script(src="/scripts/jquery.equalizer.js")
     script(src="/scripts/jquery.timeline.js")
+    script(src="/scripts/status-images.js")
     script(src="/scripts/socket.client.js")
 
     body
@@ -17,6 +18,13 @@ html(lang="en")
         header
           h1 Mobile RockBand!
 
+        .statuses
+          .status-picture.pi(data-maxvalue=3)
+            .p0
+          .status-picture.gu(data-maxvalue=3)
+            .p0
+          .status-picture.dr(data-maxvalue=3)
+            .p0
         .row
           .equalizer.pi
           .equalizer.gu

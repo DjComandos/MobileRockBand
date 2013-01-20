@@ -37,6 +37,13 @@
             };
         }
 
+        function stopPlayRecorded(){
+            $('.recorder').attr('class', 'recorder');
+            recorded = [];
+            index = 0;
+            start_time = undefined;
+        }
+
         function playNextSavedSound(){
             if(!!recorded && recorded.length > index) {
                 try {
@@ -48,7 +55,10 @@
                 } catch(e) {
                     recorded = [];
                     index = 0;
+                    stopPlayRecorded();
                 }
+            } else {
+                stopPlayRecorded();
             }
         }
 

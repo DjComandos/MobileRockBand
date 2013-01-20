@@ -24,6 +24,8 @@ app.get('/', routes.index);
 app.get('/piano', routes.piano);
 app.get('/guitar', routes.guitar);
 app.get('/listen', routes.listen);
+app.get('/drum', routes.drum);
+
 
 server.listen(app.get('port'), function(){
     console.log("Express server listening on port " + app.get('port'));
@@ -36,7 +38,15 @@ var sounds = io.of('/sounds').on('connection', function (socket) {
 var sender = io.of('/instruments').on('connection', function (socket) {
 
     socket.on('play',function(data){
+        console.log('event: play');
         console.log(data);
         sounds.emit('play', data);
     });
+
+    socket.on('stop',function(data){
+        console.log('event: stop');
+        console.log(data);
+        sounds.emit('stop', data);
+    });
+
 });

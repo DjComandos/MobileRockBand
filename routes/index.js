@@ -14,3 +14,7 @@ exports.listen = function(req, res){
 exports.guitar = function(req, res){
     res.render('guitar');
 };
+
+exports.drum = function(req, res){
+    res.render('drum');
+};

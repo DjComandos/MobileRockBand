@@ -106,14 +106,24 @@ body.piano {
 	background-position: 0px -211px;
 }
 .guitar .button.active {
-	/*background: grey;/**/
+	background: grey;
 }
 
+body.drum {
+    background: url("../img/drum_bg_.png") no-repeat;
+    background-size: 1024px;
+}
 
-
-
-
-
-
-
-
+body.drum .instrument {
+    position: absolute;
+    background-color: #ffffff;
+    opacity: 0.5;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+body.drum div#kick {
+    top: -16px;
+    left: 35px;
+    width: 315px;
+    height: 315px;
+    border-radius: 157px;
+}

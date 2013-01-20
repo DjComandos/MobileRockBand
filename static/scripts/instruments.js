@@ -42,7 +42,11 @@ $(document).ready(function(){
                 play($(this));
             })
             .bind('mouseup touchend', function(){
-                server.emit('stop', { 'i': instrument, 't': $(this).attr('id') } );
+
+                if ( instrument === 'pi') {
+                    server.emit('stop', { 'i': instrument, 't': $(this).attr('id') } );
+                }
+
                 isMouseDown = true;
                 $(this).removeClass('active');
             });

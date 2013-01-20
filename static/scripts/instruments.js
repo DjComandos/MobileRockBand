@@ -8,7 +8,7 @@ $(document).ready(function(){
         var strings = {};
 
         function timerStep(id, $element){
-            $element.removeClass('p0').removeClass('p1').removeClass('p2')
+            $element.removeClass('p0').removeClass('p1').removeClass('p2');
             $element.addClass('p' + +strings[id].step % 3);
 
             if(--strings[id].step > 0) {
@@ -16,6 +16,8 @@ $(document).ready(function(){
                 setTimeout(function(){
                     timerStep(id, $element);
                 }, 100);
+            } else {
+                $element.removeClass('p0').removeClass('p1').removeClass('p2').addClass('p0');
             }
         };
 

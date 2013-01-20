@@ -94,16 +94,16 @@ body.piano {
 	background-position: 0px 21px;
 }
 .guitar .button.p1 {
-	background-position: 0px -33px;
+	background-position: 0px -32px;
 }
 .guitar .button.p2 {
-	background-position: 0px -83px;
+	background-position: 0px -84px;
 }
 .guitar .button.p3 {
-	background-position: 0px -150px;
+	background-position: 0px -165px;
 }
 .guitar .button.p4 {
-	background-position: 0px -208px;
+	background-position: 0px -211px;
 }
 .guitar .button.active {
 	/*background: grey;/**/

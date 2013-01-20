@@ -96,9 +96,6 @@ body.piano {
 .guitar .button.p4 .string {
 	height: 18px;
 }
-.guitar .button.active {
-	/*background: grey;*/
-};
 
 body.drum {
     background: url("../img/drum_bg_.png") no-repeat;

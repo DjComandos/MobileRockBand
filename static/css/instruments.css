@@ -2,23 +2,20 @@ body {
 	margin: 0px;
 	padding: 0px;
 	width: 100%;
+	overflow-x: hidden;
 }
-.piano {
+.piano, 
+.guitar {
 	display: block;
+	width: 1280px;
+	
 }
 .button {
 	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
 /* piano */
-body,
-.piano,
-.top-line,
-.second-octave,
-.bottom-line,
-.button {
-	height: 100%;
-}
+
 
 .piano .button {
 	background: white;
@@ -36,7 +33,6 @@ body,
 	top: 0px;
 	left: 0px;
 	z-index: 10;
-	width: 100%;
 	bottom: 0px;
 	height: 50%;
 }
@@ -44,7 +40,6 @@ body,
 .piano .top-line .second-octave {
 	float: left;
 	width: 40%;
-	height: 100%;
 }
 .piano .top-line .second-octave {
 	width: 60%;
@@ -74,14 +69,36 @@ body,
 
 /* ===================== guitar =====================*/
 .guitar {
+	background: url('/images/guitar-background.jpg');
 	width: 100%;
 }
 .guitar .button {
-	height: 13%;
 	width: 100%;
-	border: 1px solid black;
+	height: 45px;
+	border: 0px solid red;
 	display: block;
 	cursor: pointer;
+	background: url('/images/guitar-string.png') no-repeat center center;
+	background-position: 0px -4px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.guitar .button.p0 {
+	background-position: 0px 20px;
+}
+.guitar .button.p1 {
+	background-position: 0px -33px;
+}
+.guitar .button.p2 {
+	background-position: 0px -83px;
+}
+.guitar .button.p3 {
+	background-position: 0px -150px;
+}
+.guitar .button.p4 {
+	background-position: 0px -208px;
 }
 .guitar .button.active {
 	background: grey;

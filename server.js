@@ -24,6 +24,8 @@ app.get('/', routes.index);
 app.get('/piano', routes.piano);
 app.get('/guitar', routes.guitar);
 app.get('/listen', routes.listen);
+app.get('/drum', routes.drum);
+
 
 server.listen(app.get('port'), function(){
     console.log("Express server listening on port " + app.get('port'));

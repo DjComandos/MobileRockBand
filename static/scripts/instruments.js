@@ -8,16 +8,16 @@ $(document).ready(function(){
         var strings = {};
 
         function timerStep(id, $element){
-            $element.removeClass('p0').removeClass('p1').removeClass('p2');
-            $element.addClass('p' + +strings[id].step % 3);
+            $element.removeClass('p0').removeClass('p1').removeClass('p2').removeClass('p3').removeClass('p4');
+            $element.addClass('p' + +strings[id].step % 5);
 
             if(--strings[id].step > 0) {
 
                 setTimeout(function(){
                     timerStep(id, $element);
-                }, 100);
+                }, 20);
             } else {
-                $element.removeClass('p0').removeClass('p1').removeClass('p2').addClass('p0');
+                $element.removeClass('p0').removeClass('p1').removeClass('p2').removeClass('p2').removeClass('p4').addClass('p0');
             }
         };
 
@@ -29,11 +29,11 @@ $(document).ready(function(){
             $element.addClass('active');
             if(instrument == 'gu') {
                 strings[id] = strings[id] || {};
-                strings[id].step = 10;
+                strings[id].step = 20;
 
                 setTimeout(function(){
                     timerStep(id, $element);
-                }, 250);/**/
+                }, 20);/**/
             }
         };
 

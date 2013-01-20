@@ -43,6 +43,7 @@
                 var channel = mrb.channels[i];
                 if (channel.finished < current_time) {
                     var element = window.document.getElementById('sound-' + type + '-' + tone);
+                    channel.id = type + tone;
                     channel.finished = current_time + element.duration * 1000;
                     channel.track.src = element.src;
                     channel.track.load();
@@ -52,11 +53,32 @@
             }
         }
 
+        window.mrb.stopSound = window.mrb.stopSound || function (type, tone) {
+
+            setTimeout(function(){
+                var current_time = (new Date()).getTime();
+                for (i = 0; i < mrb.CHANNEL_MAX; i++) {
+                    var channel = mrb.channels[i];
+
+                        if ( channel.finished > current_time && channel.id === type + tone ) {
+                            console.log(channel.track);
+
+                                channel.track.pause()
+                                channel.finished = 0;
+                            break;
+                        }
+                }
+            }, 500);
+        }
+
         socket = io.connect('/sounds');
 
         socket.on('play', function(data){
-
             mrb.playSound(data.i, data.t);
+        });
+
+        socket.on('stop', function(data){
+            mrb.stopSound(data.i, data.t);
         });
 
         $.getJSON("/sound/sounds.json", function(data){

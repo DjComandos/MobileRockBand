@@ -41,7 +41,7 @@ $(document).ready(function(){
 
         $('.button')
 
-            .bind('vmousedown', function(){
+           .bind('vmousedown', function(){
                 play($(this));
             })
             .bind('vmouseup', function(){

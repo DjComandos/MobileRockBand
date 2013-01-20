@@ -42,6 +42,7 @@
             for (i = 0; i < mrb.CHANNEL_MAX; i++) {
                 var channel = mrb.channels[i];
                 if (channel.finished < current_time) {
+                    statusImages.start(type);
                     var element = window.document.getElementById('sound-' + type + '-' + tone);
                     channel.id = type + tone;
                     channel.finished = current_time + element.duration * 1000;
@@ -65,6 +66,7 @@
 
                                 channel.track.pause()
                                 channel.finished = 0;
+                                statusImages.stop(type);
                             break;
                         }
                 }

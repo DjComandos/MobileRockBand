@@ -112,3 +112,18 @@ footer {
 .row .equalizer.dr {background-position:-109px bottom;}
 .row .equalizer.gu {background-position:0 bottom;}
 .row .equalizer.pi {background-position:-438px bottom;}
+
+
+/* ================ status pictures ======================== */
+.row.statuses {
+    margin: 0 auto;
+    width: 400px;
+    height: 100px;
+}
+.statuses .status-picture {
+    height: 100px;
+    width: 150px;
+    border: 1px solid black;
+    float: left;
+    margin: 0px 10px;
+}

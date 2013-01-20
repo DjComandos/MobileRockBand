@@ -1,11 +1,15 @@
 $(document).ready(function(){
 
+    $('.ui-loader').hide()
+
     window.addEventListener('load', function (document) {
 
         var server = io.connect('/instruments');
         var instrument = $('body').attr('data-instrument');
         var isMouseDown = false;
         var strings = {};
+
+        $(document).bind('touchmove', false);
 
         function timerStep(id, $element){
             $element.removeClass('p0').removeClass('p1').removeClass('p2').removeClass('p3').removeClass('p4');
@@ -46,10 +50,11 @@ $(document).ready(function(){
             
 
         $('.button')
-			.bind(startEvent, function(){
+
+            .bind('vmousedown', function(){
                 play($(this));
             })
-            .bind(endEvent, function(){
+            .bind('vmouseup', function(){
 
                 if ( instrument === 'pi') {
                     server.emit('stop', { 'i': instrument, 't': $(this).attr('id') } );
